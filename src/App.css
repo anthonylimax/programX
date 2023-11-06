@@ -1,0 +1,142 @@
+main{
+    background-size: cover;
+    background-image: url("./assets/background.png");
+    animation: infiniteScroll 4s linear infinite;
+    height: 90vh;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+main h2{
+    font-size: 48px;
+    font-weight: bold;
+    max-width: 900px;
+    text-align: center;
+}
+.container-our{
+    font-size: 24px;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #fafafa;
+}
+.subcontainer-problems{
+    max-width: 650px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+    text-align: center;
+}
+section{
+    height: 100vh;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main span{
+    max-width: 953px;
+    text-align: center;
+    font-size: 24px;
+}
+main button{
+    outline: none;
+    border: 3px solid #0DBB97;
+    height: 60px;
+    border-radius: 30px;
+    font-weight: 600;
+    width: 300px;
+    font-size: 30px;
+    color: #0DBB97;
+    transition: 500ms;
+    background: #0DBB9704;
+}
+[data-initial]{
+    opacity: 0;
+}
+[data-initial="left-loading"].active{
+    opacity: 1;
+    animation: left-loading 1500ms;
+}
+[data-initial="down-loading"].active{
+    opacity: 1;
+    animation: down-loading 1500ms;
+}
+[data-initial="up-loading"]{
+    opacity: 1;
+    animation: up-loading 1500ms;
+}
+.container-problems{
+    height: 80vh;
+}
+
+.container-problems span{
+    max-width: 1119px;
+    font-size: 24px;
+    text-align: center;
+}
+.container-problems h2{
+    text-align: center;
+}
+.button-about-us{
+    border: none;
+    outline: none;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 20px;
+    width: 270px;
+    margin-top: 50px;
+    height: 60px;
+    background-color: #E6D40E50;
+}
+
+
+@keyframes left-loading {
+    0%{
+        opacity: 0;
+        transform: translateX(-400px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0px);
+    }
+}
+
+@keyframes infiniteScroll {
+    0%{
+        background-position: 0vw;
+    }
+    100%{
+        background-position: 102vw;
+    }
+}
+
+@keyframes up-loading {
+    0%{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0px);
+    }
+}
+@keyframes down-loading {
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0px);
+    }
+}
+
+main button:hover{
+    transform: scale(1.05);
+}
