@@ -2,9 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
-import Dashboard from './Dashboard/dashboard'
+import Dash from './Dashboard/Dash'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Login from './homepage/Login'
+import Marketplace from './Dashboard/MarketPlace'
 
 const route = createBrowserRouter([
   {
@@ -17,7 +18,11 @@ const route = createBrowserRouter([
   },
   {
     path: '/dashboard',
-    element: <Dashboard />
+    element: <Dash />
+  },
+  {
+    path: '/marketplace',
+    element: <Marketplace />
   }
 ])
 

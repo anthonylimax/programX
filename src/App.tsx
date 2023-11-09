@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './App.css'
 import Our from './homepage/Our';
 import Head from './homepage/header'
@@ -18,8 +18,6 @@ function App() {
         element.classList.add("active");
       }
   })})
-      
-  
   return(
     <>
       <Head data-initial="up-loading"></Head>

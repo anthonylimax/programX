@@ -17,11 +17,46 @@ main h2{
     max-width: 900px;
     text-align: center;
 }
+.list-products{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.marketplace{
+    flex-direction: column;
+}
+.column-flex{
+    display: flex;
+    flex-direction: column;
+}
+.search-section{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+.search-section input{
+    align-self: flex-end;
+    padding: 10px;
+    font-size: 24px;
+}
+[name="categorys"]{
+    font-size: 24px;
+    width: auto;
+    padding: 10px 20px;
+}
 .container-our{
     font-size: 24px;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
     background-color: #fafafa;
+}
+.dash{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 120px;
+    gap: 20px;
 }
 .subcontainer-problems{
     max-width: 650px;
