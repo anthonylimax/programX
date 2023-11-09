@@ -12,38 +12,47 @@ const Head : React.FC<{children: any}> = ({children} : any) => {
     {
         name: "Dashboard",
         icon: faChartLine,
+        path: "/dashboard"
     },
     {
         name: "Marketplace",
         icon: faBasketShopping,
+        path: "/marketplace"
     },
     {
         name: "Orders",
         icon: faCartShopping,
+        path: "/dashboard"
     },
     {
         name: "Listing",
         icon: faBox,
+        path: "/dashboard"
     },
     {
         name: "Inventory",
         icon: faBoxesStacked,
+        path: "/dashboard"
     },
     {
         name: "Products Requests",
         icon: faFileContract,
+        path: "/dashboard"
     },
     {
         name: "Users",
         icon: faUser,
+        path: "/dashboard"
     },
     {
         name: "Wallet",
         icon: faWallet,
+        path: "/dashboard"
     },
     {
         name: "Market Integrations",
         icon: faNetworkWired,
+        path: "/dashboard"
     },
     ]
     return(
@@ -60,7 +69,7 @@ const Head : React.FC<{children: any}> = ({children} : any) => {
             </Header>
             <SideBar allactive={all}>
                 {ItensSide.map((element, key)=>{
-                    return <ComponentAside key={key} icon={element.icon} name={element.name} allactive={all} ></ComponentAside>
+                    return <ComponentAside key={key} icon={element.icon} path={element.path} name={element.name} allactive={all} ></ComponentAside>
                 })}  
             </SideBar>
             {children}

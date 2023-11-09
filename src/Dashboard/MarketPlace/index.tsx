@@ -75,7 +75,7 @@ export default function Marketplace() {
                 </div>
                 <div className="list-products">
                 {Data.products.map((product)=>{
-                        if(product.category == cat.category && cat.category != "" && product.productName.includes(cat.productName)){
+                        if(product.category == cat.category || cat.category == "" && product.productName.includes(cat.productName)){
                             return <ItemLoja product={product}></ItemLoja>
                         }
                     })}
