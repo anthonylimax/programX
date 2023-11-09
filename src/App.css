@@ -17,6 +17,42 @@ main h2{
     max-width: 900px;
     text-align: center;
 }
+.addCart{
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-self: center;
+    align-items: center;
+}
+.addCart button{
+    transition: 0.4s;
+    height: 54px;
+    font-size: 24px;
+    width:60px;
+    outline: none;
+    border: none;
+}
+.addCart button:hover{
+    background-color: #e9e9e9;
+}
+.addCart button:first-child{
+    border-radius: 10px 0px 0px 10px;
+}
+.addCart button:nth-child(3){
+    border-radius: 0px 10px 10px 0px;
+}
+.addCart input{
+    text-align: center;
+    border: 1px solid #e9e9e9;
+    outline: none;
+    height: 100%;
+    width: 160px;
+}
+.price{
+    color: #0DBB97;
+    font-size: 24px;
+    font-weight: 600;
+}
 .list-products{
     display: flex;
     flex-wrap: wrap;

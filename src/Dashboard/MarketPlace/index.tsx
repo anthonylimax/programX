@@ -17,7 +17,7 @@ export default function Marketplace() {
         products: [
             {
                 imgPath: "https://www.lojafasolo.com.br/arquivos/PRODUTOS/9641614980571747180/270_G_Carteira-de-Couro-Masculina-PortaCheques-H01.jpg",
-                productName: "wallet tiger opera",
+                productName: "Personalized Leather Men's Wallet with Wooden Box",
                 category: "wallets",
                 price: 189.99,
                 weight: 200,
@@ -25,7 +25,7 @@ export default function Marketplace() {
             },
             {
                 imgPath: "https://www.lojafasolo.com.br/arquivos/PRODUTOS/9641614980571747180/270_G_Carteira-de-Couro-Masculina-PortaCheques-H01.jpg",
-                productName: "wallet tiger ninja",
+                productName: "Personalized Leather Men's Wallet with Wooden Box",
                 category: "wallets",
                 price: 189.99,
                 weight: 200,
@@ -33,7 +33,7 @@ export default function Marketplace() {
             },
             {
                 imgPath: "https://www.lojafasolo.com.br/arquivos/PRODUTOS/9641614980571747180/270_G_Carteira-de-Couro-Masculina-PortaCheques-H01.jpg",
-                productName: "tiger opera ninja",
+                productName: "Personalized Leather Men's Wallet with Wooden Box",
                 category: "wallets",
                 price: 189.99,
                 weight: 200,
@@ -41,7 +41,7 @@ export default function Marketplace() {
             },
             {
                 imgPath: "https://www.lojafasolo.com.br/arquivos/PRODUTOS/9641614980571747180/270_G_Carteira-de-Couro-Masculina-PortaCheques-H01.jpg",
-                productName: "simple wallet",
+                productName: "Personalized Leather Men's Wallet with Wooden Box",
                 category: "wallets",
                 price: 189.99,
                 weight: 200,

@@ -7,7 +7,7 @@ export const SideBar = styled.aside<{allactive?: boolean}>`
     width: ${props => props.allactive ? "400px" : "100px"};
     height: 100vh;
     background-color: white;
-    position: absolute;
+    position: fixed;
     left: 0;
     z-index: 1;
     align-items: center;
@@ -22,7 +22,7 @@ export const Header = styled.header`
     width: 100vw;
     display: flex;
     align-items: center;
-    position: absolute;
+    position: fixed;
     left: 0;
     z-index: 3;
     background-color: white;
