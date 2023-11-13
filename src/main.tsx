@@ -6,6 +6,8 @@ import Dash from './Dashboard/Dash'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Login from './homepage/Login'
 import Marketplace from './Dashboard/MarketPlace'
+import { store } from './stores/GlobalStore'
+import { Provider } from 'react-redux'
 
 const route = createBrowserRouter([
   {
@@ -28,6 +30,8 @@ const route = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
+    <Provider store={store}>
     <RouterProvider router={route}></RouterProvider>
+    </Provider>
   </React.StrictMode>,
 )

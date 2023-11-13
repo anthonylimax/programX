@@ -77,3 +77,29 @@ export const Input = styled.input`
     padding: 15px;
     font-size: 18px;
 `
+export const SphereLoading = styled.div`
+    background-image: url("sphereload.png");
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    @keyframes infiniteSpine{
+        0%{
+            transform: rotateZ(0deg);
+        }
+        100%{
+            transform: rotateZ(360deg);
+        }
+    }
+    animation: infiniteSpine 1s infinite linear;
+`
+export const AllBlack = styled.div`
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    height: 100vh;
+    background-color: #00000090;
+`

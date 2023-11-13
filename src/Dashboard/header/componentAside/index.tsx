@@ -10,7 +10,8 @@ type props = {
     path: string
     icon: IconDefinition
     key: Key
-    name: string | undefined
+    color?: string 
+    name?: string
     allactive: boolean
 }
 
@@ -29,15 +30,15 @@ export default function ComponentAside(props : props){
         <FontAwesomeIcon style={{
             position: "absolute",
             left: 35,
-        }} fontSize={25} width={30} color={leave ? "#5f5f5f" : "#5f5f5f" } icon={props.icon}></FontAwesomeIcon>
-        {leave ? <span>{props.name}</span> : null}
+        }} fontSize={25} width={30} color={!leave ? "#5f5f5f" : props.color } icon={props.icon}></FontAwesomeIcon>
+        {leave ? <span style={{color: props.color}}>{props.name}</span> : null}
         </Link>
         </Wrapper> :
-        <ActiveWrapper>
+        <ActiveWrapper color={props.color}>
             <Link to={props.path}><FontAwesomeIcon style={{
             position: "absolute",
             left: 35,
-        }} fontSize={25} width={30} color={leave ? "#5f5f5f" : "#5f5f5f" } icon={props.icon}></FontAwesomeIcon>
+        }} fontSize={25} width={30} color={!leave ? "#5f5f5f" : props.color } icon={props.icon}></FontAwesomeIcon>
             <span>{props.name}</span>
             </Link>
         </ActiveWrapper>
