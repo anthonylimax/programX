@@ -8,6 +8,8 @@ import Login from './homepage/Login'
 import Marketplace from './Dashboard/MarketPlace'
 import { store } from './stores/GlobalStore'
 import { Provider } from 'react-redux'
+import Signup from './homepage/Login/signup'
+import MarketIntegration from './market_integration'
 
 const route = createBrowserRouter([
   {
@@ -25,6 +27,14 @@ const route = createBrowserRouter([
   {
     path: '/marketplace',
     element: <Marketplace />
+  },
+  {
+    path: '/signup',
+    element: <Signup />
+  },
+  {
+    path: '/marketintegration',
+    element: <MarketIntegration />  
   }
 ])
 

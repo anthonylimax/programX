@@ -4,6 +4,7 @@ import { faEnvelope, faKey} from "@fortawesome/free-solid-svg-icons";
 import { useContext, useEffect, useState } from "react";
 import CtxtTypeLogin from "../../contexts/LoginType";
 import axios from "axios";
+import logo from './../../assets/bestseller_blue.png'
 import { useDispatch, useSelector } from "react-redux";
 import { Set } from "../../stores/acessToken";
 import { redirect as Redirect, useNavigate, useNavigation } from "react-router-dom";
@@ -29,20 +30,15 @@ export default function Seller(){
     const token = useSelector(state => state.token);
     const {setState, state} = useContext(CtxtTypeLogin);
     const [dataForm, setDataForm] = useState({email:"", password: ""});
-    const [color, setColor] = useState("#FFFFFFE0");
+    const [color, setColor] = useState("#4257EC");
+    const [inputColorFirst, setInputColorFirst] = useState("black");
+    const [inputColorSecond, setInputColorSecond] = useState("black");
     
     return(
         <Container >
-        <FormLogin>
-        <h1>
-        With Hundreds Of Trending Products
-            </h1>
-            <h2>
-            Go Global!
-            </h2>
-        </FormLogin>
-        <FormLogin color="#0EBAE6E0">
+        <FormLogin color="white">
             <LoginWrapper>
+                <img src={logo} width={170} alt="" />
                 <LoginVariability>
                     <MakeLogin>Sign in as a Producer</MakeLogin>
                     <SmallerText clickable="asomething" onClick={()=>{
@@ -51,29 +47,33 @@ export default function Seller(){
                     }}>or Seller</SmallerText>
                 </LoginVariability>
                     <InputEnv>
-                        <FontAwesomeIcon icon={faEnvelope} color="white" fontSize={30}></FontAwesomeIcon>
-                    <Input onChange={({target}) =>{
+                        <FontAwesomeIcon icon={faEnvelope} color={inputColorFirst} fontSize={20}></FontAwesomeIcon>
+                    <Input color={inputColorFirst} onChange={({target}) =>{
                         setDataForm({...dataForm, email: target.value});
-                        if(dataForm.email.length > 4 && dataForm.password.length > 4){
-                            setColor("#FFF")
+                        if(dataForm.email.length > 4){
+                            setInputColorFirst("#4257EC")
                         }
                         else{
-                            setColor("#FFFFFFE0")
+                            setInputColorFirst("#F04200")
                         }
                     }} type="email" placeholder="Email"/>
                     </InputEnv>
                     <InputEnv>
-                        <FontAwesomeIcon icon={faKey} color="white" fontSize={30}></FontAwesomeIcon>
-                    <Input onChange={({target}) =>{
+                        <FontAwesomeIcon icon={faKey} color={inputColorSecond} fontSize={20}></FontAwesomeIcon>
+                    <Input color={inputColorSecond} onChange={({target}) =>{
                         setDataForm({...dataForm, password: target.value});
-                        if(dataForm.email.length > 4 && dataForm.password.length > 4){
-                            setColor("#FFFFFF")
+                        if(dataForm.password.length > 4){
+                            setInputColorSecond("#4257EC")
                         }
                         else{
-                            setColor("#FFFFFFD0")
+                            setInputColorSecond("#F04200")
                         }
                     }} type="password"placeholder="Password"/>
                     </InputEnv>
+                    <div id="remember-me">
+                        <input type="checkbox" name="" id="" />
+                        <span>rememer me</span>
+                    </div>
             </LoginWrapper>
             <SubmitButton onClick={()=>{
                 setClicked(true);
@@ -86,6 +86,7 @@ export default function Seller(){
                     setClicked(false);
                 })
             }} color={color} >Log In</SubmitButton>
+            <span>Sign Up</span>
         </FormLogin>
        {clicked ? <AllBlack>
            <SphereLoading></SphereLoading>
