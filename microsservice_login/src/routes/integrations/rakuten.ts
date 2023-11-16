@@ -4,7 +4,6 @@ import axios, { AxiosResponse } from "axios";
 export const rakutenApi = (routes: Router) => { 
     routes.post('/searchRakutenItems', async (request: Request, response: Response) => {
         try {
-            console.log("asaoksnao");
             const { applicationId, keyword, genreId, sort, minPrice, maxPrice, hits, page } = request.body;
 
             const rakutenApiEndpoint = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601';
