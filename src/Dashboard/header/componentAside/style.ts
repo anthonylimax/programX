@@ -32,7 +32,7 @@ cursor: pointer;
         }
     }
 `
-export const ActiveWrapper = styled.div`
+export const ActiveWrapper = styled.div<{color?: string}>`
     display: flex;
     position: relative;
     z-index: 0;
@@ -44,6 +44,14 @@ export const ActiveWrapper = styled.div`
     width: 300px;
     align-self: flex-start;
     padding-left: 80px;
+    &:hover{
+        svg{
+            color: ${props => props.color ? props.color : "black"};
+        }
+        span{
+            color: ${props => props.color ? props.color : "black"};
+        }
+    }
     animation: SideStart 0.1s linear;
     @keyframes SideStart{
         0%{

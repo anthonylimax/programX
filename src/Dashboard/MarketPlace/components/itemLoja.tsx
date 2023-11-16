@@ -1,7 +1,11 @@
 import { useState } from 'react'
-import { BodyItem } from './styles'
+import { BodyItem, Cart } from './styles'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import { useDispatch, useSelector } from 'react-redux'
+import { ReducerAddProduct } from '../../../stores/cart'
 
-type ExpectProps = {
+export type CartProps = {
     product : {
         imgPath: string,
         productName: string,
@@ -11,7 +15,10 @@ type ExpectProps = {
         sku: string
     }
 }
-export default function ItemLoja(props : ExpectProps){
+export default function ItemLoja(props : CartProps){
+    const dispatch = useDispatch();
+    const cart = useSelector((state : {cart: number}) => state.cart);
+
     const [value, setValue] = useState(1);
     function Increment(){
         setValue(value + 1);
@@ -46,6 +53,13 @@ export default function ItemLoja(props : ExpectProps){
                     }} value={value}/>
                     <button onClick={Increment}>+</button>
             </div>
+            <button onClick={()=>{
+                dispatch(ReducerAddProduct({sku: props.product.sku, quantity: value}));
+                console.log(cart);
+            }} className='button-buy'>
+                <FontAwesomeIcon color='white' icon={faCartShopping} onClick={()=>{}}></FontAwesomeIcon>
+                <span>Add to Sample Order</span>
+            </button>
         </BodyItem>
     )
 }

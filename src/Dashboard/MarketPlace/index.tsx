@@ -2,53 +2,19 @@
 import { useState} from "react";
 import Head from "../header/dashboard";
 import ItemLoja from "./components/itemLoja";
+import { useSelector } from "react-redux";
+import { Cart } from "./components/styles";
 
 
 export default function Marketplace() {
-    
+    const products = useSelector((state : any) => state.products);
     const [cat, setCat] = useState({
         productName: "",
-        category: ""
+        category: ""    
     });
-    let Data = {
-        categorys: [
-            "wallets", "clean   ", "wallets"
-        ],
-        products: [
-            {
-                imgPath: "https://www.lojafasolo.com.br/arquivos/PRODUTOS/9641614980571747180/270_G_Carteira-de-Couro-Masculina-PortaCheques-H01.jpg",
-                productName: "Personalized Leather Men's Wallet with Wooden Box",
-                category: "wallets",
-                price: 189.99,
-                weight: 200,
-                sku:"sasasani",
-            },
-            {
-                imgPath: "https://www.lojafasolo.com.br/arquivos/PRODUTOS/9641614980571747180/270_G_Carteira-de-Couro-Masculina-PortaCheques-H01.jpg",
-                productName: "Personalized Leather Men's Wallet with Wooden Box",
-                category: "wallets",
-                price: 189.99,
-                weight: 200,
-                sku:"sasasani",
-            },
-            {
-                imgPath: "https://www.lojafasolo.com.br/arquivos/PRODUTOS/9641614980571747180/270_G_Carteira-de-Couro-Masculina-PortaCheques-H01.jpg",
-                productName: "Personalized Leather Men's Wallet with Wooden Box",
-                category: "wallets",
-                price: 189.99,
-                weight: 200,
-                sku:"sasasani",
-            },
-            {
-                imgPath: "https://www.lojafasolo.com.br/arquivos/PRODUTOS/9641614980571747180/270_G_Carteira-de-Couro-Masculina-PortaCheques-H01.jpg",
-                productName: "Personalized Leather Men's Wallet with Wooden Box",
-                category: "wallets",
-                price: 189.99,
-                weight: 200,
-                sku:"sasasani",
-            },
+    let categorys = [
+            "wallets", "clean", "wallets"
         ]
-    }
     return (
         <>
             <Head>
@@ -60,7 +26,7 @@ export default function Marketplace() {
                     <select onChange={({target})=>{
                         setCat({...cat, category: target.value});
                     }} name="categorys" id="category">
-                        {Data.categorys.map((element, key) => {
+                        {categorys.map((element, key) => {
                             return <option itemType={element} key={key} onClick={(e)=>{
                                 console.log(e)
                             }}>{element}</option>
@@ -74,7 +40,7 @@ export default function Marketplace() {
                     } type="text" />
                 </div>
                 <div className="list-products">
-                {Data.products.map((product)=>{
+                {products.map((product : any)=>{
                         if(product.category == cat.category || cat.category == "" && product.productName.includes(cat.productName)){
                             return <ItemLoja product={product}></ItemLoja>
                         }
