@@ -2,64 +2,33 @@ import { Request, Response, Router } from "express";
 import axios, { AxiosResponse } from "axios";
 
 export const rakutenApi = (routes: Router) => { 
-    routes.post('/searchRakutenItems', async (request: Request, response: Response) => {
-        try {
-            console.log("asaoksnao");
-            const { applicationId, keyword, genreId, sort, minPrice, maxPrice, hits, page } = request.body;
-
-            const rakutenApiEndpoint = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601';
-
-            const rakutenApiResponse: AxiosResponse = await axios.get(rakutenApiEndpoint, {
-                params: {
-                    applicationId,
-                    keyword,
-                    genreId,
-                    sort,
-                    minPrice,
-                    maxPrice,
-                    hits,
-                    page,
-                },
-            });
-
-            if (rakutenApiResponse.status === 200) {
-                const rakutenResponseData = rakutenApiResponse.data; // Ajuste conforme a estrutura real da resposta
-                response.status(200).json(rakutenResponseData);
-            } else {
-                response.status(rakutenApiResponse.status).send("Erro na requisição à API da Rakuten");
-            }
-        } catch (error) {
-            console.error(error);
-            response.status(500).send("Erro interno no servidor");
-        }
-    });
-    routes.post('/rakuten/itemSearch', async (request: Request, response: Response) => {
-        console.log(request.body); 
+    routes.get('/rakuten/itemSearch', async (request: Request, response: Response) => {
         try {
         const { keyword, genreId, itemCode, shopCode } = request.body;
             
             // Rakuten API endpoint
             const apiUrl = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601';
             const format = 'json';
-            const applicationId = 'e06e2a5afcf14b52139c1fb6c58e9dbc';
-            let apiEndpoint = `${apiUrl}?format=${format}&applicationId=${applicationId}`;
+            const applicationId = '1050682487455494185';
+            let apiEndpoint = `${apiUrl}?format=${format}`;
 
             if (keyword) {
-                apiEndpoint += `&keyword=${encodeURIComponent(keyword)}`;
+                apiEndpoint += `&keyword=${keyword}`;
             }
 
             if (genreId) {
-                apiEndpoint += `&genreId=${encodeURIComponent(genreId)}`;
+                apiEndpoint += `&genreId=${genreId}`;
             }
 
             if (itemCode) {
-                apiEndpoint += `&itemCode=${encodeURIComponent(itemCode)}`;
+                apiEndpoint += `&itemCode=${itemCode}`;
             }
 
             if (shopCode) {
-                apiEndpoint += `&shopCode=${encodeURIComponent(shopCode)}`;
+                apiEndpoint += `&shopCode=${shopCode}`;
             }
-
+            apiEndpoint += `&applicationId=${applicationId}`;
+            console.log(apiEndpoint);
             // Make the Rakuten API request
             const rakutenApiResponse = await axios.get(apiEndpoint);
 
