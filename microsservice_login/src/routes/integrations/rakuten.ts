@@ -2,7 +2,39 @@ import { Request, Response, Router } from "express";
 import axios, { AxiosResponse } from "axios";
 
 export const rakutenApi = (routes: Router) => { 
-    routes.get('/rakuten/itemSearch', async (request: Request, response: Response) => {
+
+    routes.post('/searchRakutenItems', async (request: Request, response: Response) => {
+        try {
+            const { applicationId, keyword, genreId, sort, minPrice, maxPrice, hits, page } = request.body;
+
+            const rakutenApiEndpoint = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601';
+
+            const rakutenApiResponse: AxiosResponse = await axios.get(rakutenApiEndpoint, {
+                params: {
+                    applicationId,
+                    keyword,
+                    genreId,
+                    sort,
+                    minPrice,
+                    maxPrice,
+                    hits,
+                    page,
+                },
+            });
+
+            if (rakutenApiResponse.status === 200) {
+                const rakutenResponseData = rakutenApiResponse.data; // Ajuste conforme a estrutura real da resposta
+                response.status(200).json(rakutenResponseData);
+            } else {
+                response.status(rakutenApiResponse.status).send("Erro na requisição à API da Rakuten");
+            }
+        } catch (error) {
+            console.error(error);
+            response.status(500).send("Erro interno no servidor");
+        }
+    });
+    routes.post('/rakuten/itemSearch', async (request: Request, response: Response) => {
+        console.log(request.body); 
         try {
         const { keyword, genreId, itemCode, shopCode } = request.body;
             

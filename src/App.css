@@ -9,8 +9,6 @@ main{
     flex-direction: column;
     justify-content: center;
 }
-
-
 main h2{
     font-size: 48px;
     font-weight: bold;
