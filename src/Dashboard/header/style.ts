@@ -14,7 +14,36 @@ export const SideBar = styled.aside<{allactive?: boolean}>`
     border-right: 1px solid #e0e0e0;
     box-shadow: 1px 1px 5px #e0e0e0;
     padding-top: 180px;
-    gap: 10px;
+        overflow: ${props => props.allactive ? "hidden" : "none"};
+        gap: 10px;
+        animation: ${props => props.allactive ? "showingIn 1s" : "showingOut 1s"};
+        @keyframes showingIn {
+            0%{
+            width: 100px;
+        }
+        100%{
+            width: 400px;
+        }
+    }
+    @keyframes showingOut {
+        0%{
+            width: 400px;
+        }
+        100%{
+            width: 100px;
+        }
+    }
+    @media (max-width: 600px) {
+        @keyframes showingIn {
+        0%{
+            width: 0px;
+        }
+        100%{
+            width: 400px;
+        }
+    }
+        left: ${props => props.allactive ? "0px" : "-100px"};
+    }
 `
 export const Painel = styled.div`
     margin-right: 100px;
@@ -45,17 +74,18 @@ export const Painel = styled.div`
             text-align: center;
             border-radius: 50%;
         }
+        
     justify-content: center;
 `
 export const Header = styled.header`
     .painel-left{
+        
         display: flex;
         align-items: center;
         gap: 10px;
         justify-content: center;
     }
     color: #5f5f5f;
-
     justify-content: space-between;
     top: 0;
     width: 100vw;

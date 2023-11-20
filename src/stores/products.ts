@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const products_storage = [{
                 imgPath: "https://www.lojafasolo.com.br/arquivos/PRODUTOS/9641614980571747180/270_G_Carteira-de-Couro-Masculina-PortaCheques-H01.jpg",
-                productName: "Personalized Leather Men's Wallet with Wooden Box",
+                productName: "Personalized Leather Men's Wallet with 9",
                 category: "wallets",
                 price: 189.99,
                 weight: 200,
@@ -10,7 +10,7 @@ const products_storage = [{
             },
             {
                 imgPath: "https://www.lojafasolo.com.br/arquivos/PRODUTOS/9641614980571747180/270_G_Carteira-de-Couro-Masculina-PortaCheques-H01.jpg",
-                productName: "Personalized Leather Men's Wallet with Wooden Box",
+                productName: "Personalized Leather Men's Wallet with 7",
                 category: "wallets",
                 price: 189.99,
                 weight: 200,
@@ -18,7 +18,7 @@ const products_storage = [{
             },
             {
                 imgPath: "https://www.lojafasolo.com.br/arquivos/PRODUTOS/9641614980571747180/270_G_Carteira-de-Couro-Masculina-PortaCheques-H01.jpg",
-                productName: "Personalized Leather Men's Wallet with Wooden Box",
+                productName: "Personalized Leather Men's Wallet with 6",
                 category: "wallets",
                 price: 189.99,
                 weight: 200,
@@ -26,7 +26,7 @@ const products_storage = [{
             },
             {
                 imgPath: "https://www.lojafasolo.com.br/arquivos/PRODUTOS/9641614980571747180/270_G_Carteira-de-Couro-Masculina-PortaCheques-H01.jpg",
-                productName: "Personalized Leather Men's Wallet with Wooden Box",
+                productName: "Personalized Leather Men's Wallet with 3",
                 category: "wallets",
                 price: 189.99,
                 weight: 200,
@@ -34,7 +34,7 @@ const products_storage = [{
             },
             {
                 imgPath: "https://www.lojafasolo.com.br/arquivos/PRODUTOS/9641614980571747180/270_G_Carteira-de-Couro-Masculina-PortaCheques-H01.jpg",
-                productName: "Personalized Leather Men's Wallet with Wooden Box",
+                productName: "Personalized Leather Men's Wallet with4",
                 category: "wallets",
                 price: 189.99,
                 weight: 200,
@@ -42,7 +42,7 @@ const products_storage = [{
             },
             {
                 imgPath: "https://www.lojafasolo.com.br/arquivos/PRODUTOS/9641614980571747180/270_G_Carteira-de-Couro-Masculina-PortaCheques-H01.jpg",
-                productName: "Personalized Leather Men's Wallet with Wooden Box",
+                productName: "Personalized Leather Men's Wallet with 2",
                 category: "wallets",
                 price: 189.99,
                 weight: 200,
@@ -50,7 +50,7 @@ const products_storage = [{
             },
             {
                 imgPath: "https://www.lojafasolo.com.br/arquivos/PRODUTOS/9641614980571747180/270_G_Carteira-de-Couro-Masculina-PortaCheques-H01.jpg",
-                productName: "Personalized Leather Men's Wallet with Wooden Box",
+                productName: "Personalized Leather Men's Wallet with 1",
                 category: "wallets",
                 price: 189.99,
                 weight: 200,

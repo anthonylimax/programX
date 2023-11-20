@@ -63,7 +63,7 @@ const Head: React.FC<{ children: any }> = ({ children }: any) => {
         {
             name: "Market Integrations",
             icon: faNetworkWired,
-            path: "/dashboard"
+            path: "/marketintegration"
         },
     ]
     return (
@@ -96,7 +96,6 @@ const Head: React.FC<{ children: any }> = ({ children }: any) => {
                     return <ComponentAside key={key} color="#FF7F10" icon={element.icon} path={element.path} name={element.name} allactive={all} ></ComponentAside>
                 })}
             </SideBar>
-            {children}
 
             <Cart left={clickCart ? 0 : -502}>
                 <div className="body">

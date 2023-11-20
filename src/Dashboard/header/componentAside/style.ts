@@ -32,17 +32,16 @@ cursor: pointer;
         }
     }
 `
-export const ActiveWrapper = styled.div<{color?: string}>`
+export const ActiveWrapper = styled.div<{color?: string, allActive ?: boolean}>`
     display: flex;
     position: relative;
     z-index: 0;
     align-items: center;
     opacity: 1;
-    width: 100%;
     height: 52px;
     top: 0px;
     width: 300px;
-    align-self: flex-start;
+    align-self: flex-start; 
     padding-left: 80px;
     &:hover{
         svg{
@@ -52,6 +51,7 @@ export const ActiveWrapper = styled.div<{color?: string}>`
             color: ${props => props.color ? props.color : "black"};
         }
     }
+    
     animation: SideStart 0.1s linear;
     @keyframes SideStart{
         0%{

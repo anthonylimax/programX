@@ -6,4 +6,7 @@ export const Container = styled.main`
     align-items: flex-start;
     justify-content: flex-start;
     background: none;
+    @media (max-width: 600px) {
+        padding: 0;
+    }
 `

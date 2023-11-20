@@ -52,13 +52,17 @@ main h2{
     font-weight: 600;
 }
 .list-products{
-    justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
+    grid-template-columns: repeat(5, 1fr);
+    display: grid;
+    width: 100%;
+    justify-items: center;
     gap: 2px;
 }
 .marketplace{
+    display: flex !important;
     flex-direction: column;
+    align-items: flex-start;
+    
 }
 .column-flex{
     display: flex;
@@ -69,6 +73,30 @@ main h2{
     gap: 20px;
     justify-content: center;
 }
+@media (max-width: 1700px) {
+    .list-products{
+        
+    grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media (max-width: 1380px) {
+    .list-products{
+        grid-template-columns: repeat(3, 1fr);
+        }
+}
+@media (max-width: 1073px) {
+    .list-products{
+        
+        grid-template-columns: repeat(2, 1fr);
+        }
+}
+@media (max-width: 762px) {
+    .list-products{
+
+        grid-template-columns: repeat(1, 1fr);
+        }
+}
+
 .search-section input{
     align-self: flex-end;
     padding: 10px;
@@ -98,11 +126,15 @@ main h2{
     background-color: #fafafa;
 }
 .dash{
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     padding: 120px;
     gap: 20px;
+}
+@media (max-width: 600px) {
+    .dash{
+        padding: 120px 0px;
+    }
 }
 .subcontainer-problems{
     max-width: 650px;

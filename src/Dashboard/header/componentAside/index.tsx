@@ -34,7 +34,7 @@ export default function ComponentAside(props : props){
         {leave ? <span style={{color: props.color}}>{props.name}</span> : null}
         </Link>
         </Wrapper> :
-        <ActiveWrapper color={props.color}>
+        <ActiveWrapper allActive={props.allactive} color={props.color}>
             <Link to={props.path}><FontAwesomeIcon style={{
             position: "absolute",
             left: 35,
